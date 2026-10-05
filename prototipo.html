@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="es" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viviendas Modulares en Contenedor | Casas Containers</title>
+    <meta name="description" content="Casas Containers: Viviendas modulares de alto estándar fabricadas en Paine. Diseños llave en mano con aislación térmica y entrega rápida.">
+    <meta property="og:title" content="Viviendas Modulares en Contenedor | Casas Containers">
+    <meta property="og:description" content="Transformamos contenedores marítimos en espacios habitables de alto estándar.">
+    <meta property="og:image" content="https://casascontainers.cl/wp-content/uploads/2025/11/nogal-1.jpeg">
+    <meta property="og:url" content="https://casascontainers.cl/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏗️</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Casas Containers",
+      "image": "https://casascontainers.cl/wp-content/uploads/2026/06/LOGO_OFICIAL-scaled.png",
+      "description": "Viviendas modulares en contenedores marítimos.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle 5 Poniente Parcela 127",
+        "addressLocality": "Paine",
+        "addressRegion": "Región Metropolitana",
+        "addressCountry": "CL"
+      },
+      "telephone": "+56966607969",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <script>
+        // Prevenir parpadeo de modo oscuro
+        const savedTheme = localStorage.getItem('color-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
+    <style>
+        /* CSS Custom Propio - Reemplazo de Tailwind */
+        :root {
+            --brand-50: #f2f9f1;
+            --brand-100: #e1f2df;
+            --brand-500: #26751e; /* WCAG AA contrastado */
+            --brand-800: #1a4a12;
+            --brand-900: #062601;
+            --brand-accent: #eab308;
+            --bg-color: #f7f9f7;
+            --surface-color: #ffffff;
+            --border-color: #e2e8f0;
+            --text-main: #1a202c;
+            --text-muted: #4a5568; /* WCAG AA contrastado */
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .dark {
+            --bg-color: #0c100c;
+            --surface-color: #151b15;
+            --border-color: #1f291f;
+            --text-main: #f7fafc;
+            --text-muted: #a0aec0;
+            --nav-bg: rgba(21, 27, 21, 0.95);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; transition: background-color 0.3s, color 0.3s; scroll-behavior: smooth; }
+        a, button { text-decoration: none; color: inherit; cursor: pointer; border: none; background: none; font-family: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        svg { fill: currentColor; width: 1em; height: 1em; display: inline-block; }
+        
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--brand-500); color: white; padding: 8px; z-index: 100; transition: top 0.2s; }
+        .skip-link:focus { top: 0; }
+        
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 5rem 0; border-bottom: 1px solid var(--border-color); }
+        .text-center { text-align: center; }
+        .flex { display: flex; }
+        .grid { display: grid; }
+        .gap-4 { gap: 1rem; } .gap-6 { gap: 1.5rem; } .gap-8 { gap: 2rem; }
+        .items-center { align-items: center; } .justify-between { justify-content: space-between; } .justify-center { justify-content: center; }
+        .font-bold { font-weight: 700; } .text-sm { font-size: 0.875rem; } .text-xs { font-size: 0.75rem; } .text-lg { font-size: 1.125rem; }
+        .mb-2 { margin-bottom: 0.5rem; } .mb-4 { margin-bottom: 1rem; } .mb-6 { margin-bottom: 1.5rem; } .mb-8 { margin-bottom: 2rem; } .mt-4 { margin-top: 1rem; }
+        .p-6 { padding: 1.5rem; } .p-8 { padding: 2rem; }
+        .rounded { border-radius: 0.5rem; } .rounded-lg { border-radius: 1rem; } .rounded-full { border-radius: 9999px; }
+        
+        .text-brand { color: var(--brand-500); }
+        .text-muted { color: var(--text-muted); }
+        .bg-surface { background-color: var(--surface-color); }
+        .border { border: 1px solid var(--border-color); }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; font-weight: 600; border-radius: 9999px; transition: all 0.2s; gap: 0.5rem; }
+        .btn-primary { background-color: var(--brand-500); color: white; }
+        .btn-primary:hover { background-color: var(--brand-800); transform: translateY(-2px); box-shadow: var(--shadow); }
+        .btn-accent { background-color: var(--brand-accent); color: var(--brand-900); }
+        .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(234,179,8,0.3); }
+        .btn-outline { border: 1px solid var(--border-color); background: transparent; }
+        .btn-outline:hover { background: var(--bg-color); }
+        
+        .input, .select, .textarea { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main); border-radius: 0.5rem; margin-top: 0.5rem; font-family: inherit;}
+        .input:focus, .select:focus, .textarea:focus { outline: 2px solid var(--brand-500); }
+        .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); }
+
+        /* Navigation */
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 40; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); transition: transform 0.3s; }
+        .navbar.hidden { transform: translateY(-100%); }
+        .nav-content { height: 5rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 3rem; }
+        .nav-links { display: none; gap: 2rem; align-items: center; }
+        @media (min-width: 768px) { .nav-links { display: flex; } .menu-btn { display: none; } }
+        .nav-link { font-size: 0.875rem; font-weight: 600; color: var(--text-muted); transition: color 0.2s; }
+        .nav-link:hover { color: var(--brand-500); }
+        .mobile-menu { position: fixed; inset: 0; background: var(--surface-color); z-index: 35; padding-top: 6rem; display: none; flex-direction: column; align-items: center; gap: 2rem; }
+        .mobile-menu.active { display: flex; }
+
+        /* Hero */
+        .hero { position: relative; min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6rem 1.5rem; overflow: hidden; }
+        .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(6, 38, 1, 0.6), rgba(12, 16, 12, 0.8)); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; color: white; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; }
+        
+        /* Cards */
+        .card { background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; transition: box-shadow 0.3s, transform 0.3s; text-align: left; width: 100%; }
+        .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+        .card-img-wrap { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--bg-color); }
+        .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+        .card-badge { position: absolute; bottom: 0.75rem; left: 0.75rem; background: var(--nav-bg); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.25rem; }
+        .card-content { padding: 1.5rem; }
+        .card-specs { display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); }
+        
+        /* Modal */
+        .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 100; display: flex; justify-content: center; align-items: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .modal.active { opacity: 1; pointer-events: auto; }
+        .modal-content { background: var(--surface-color); width: 100%; max-width: 1200px; max-height: 90vh; border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column; position: relative; transform: scale(0.95); transition: transform 0.3s; }
+        .modal.active .modal-content { transform: scale(1); }
+        @media(min-width: 1024px) { .modal-content { flex-direction: row; } }
+        .modal-gallery { width: 100%; height: 50vh; display: flex; flex-direction: column; background: var(--bg-color); position: relative; }
+        @media(min-width: 1024px) { .modal-gallery { width: 60%; height: 100%; } }
+        .modal-info { width: 100%; padding: 2rem; overflow-y: auto; display: flex; flex-direction: column; }
+        @media(min-width: 1024px) { .modal-info { width: 40%; } }
+        .modal-close { position: absolute; top: 1rem; right: 1rem; background: var(--nav-bg); width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 10; border: 1px solid var(--border-color); }
+        
+        /* Table */
+        .table-wrap { overflow-x: auto; margin-top: 2rem; border: 1px solid var(--border-color); border-radius: 1rem; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 1rem; border-bottom: 1px solid var(--border-color); }
+        th { background: var(--bg-color); font-weight: 700; font-size: 0.875rem; }
+
+        /* Accordion */
+        .accordion-item { border: 1px solid var(--border-color); border-radius: 0.5rem; margin-bottom: 1rem; overflow: hidden; }
+        .accordion-btn { width: 100%; padding: 1.5rem; text-align: left; font-weight: 600; display: flex; justify-content: space-between; align-items: center; background: var(--surface-color); }
+        .accordion-content { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s; background: var(--surface-color); color: var(--text-muted); }
+        .accordion-btn[aria-expanded="true"] + .accordion-content { padding-bottom: 1.5rem; max-height: 500px; }
+        .accordion-btn svg { transition: transform 0.3s; }
+        .accordion-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+        /* Animation */
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+        /* Bottom Bar Mobile */
+        .bottom-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--surface-color); border-top: 1px solid var(--border-color); padding: 0.75rem; display: flex; gap: 0.5rem; z-index: 30; }
+        @media(min-width: 768px) { .bottom-bar { display: none; } }
+        
+        /* Utilities */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        .w-full { width: 100%; } .h-full { height: 100%; }
+        .object-cover { object-fit: cover; }
+        .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+        @media(min-width: 768px) { .grid-cols-2 { grid-template-columns: repeat(2, 1fr); } .grid-cols-4 { grid-template-columns: repeat(4, 1fr); } }
+        .list-disc { padding-left: 1.5rem; margin-top: 1rem; color: var(--text-muted); } .list-disc li { margin-bottom: 0.5rem; }
+
+        /* ===== Utilidades que faltaban (el HTML las usaba pero no estaban definidas) ===== */
+        .bg-color { background-color: var(--bg-color); }
+        .border-0 { border: 0; }
+        .flex-col { flex-direction: column; } .flex-1 { flex: 1 1 0%; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .max-w-4xl { max-width: 56rem; }
+        .overflow-hidden { overflow: hidden; }
+        .aspect-video { aspect-ratio: 16 / 9; }
+        .gap-1 { gap: 0.25rem; } .gap-2 { gap: 0.5rem; } .gap-10 { gap: 2.5rem; }
+        .mb-1 { margin-bottom: 0.25rem; } .mb-10 { margin-bottom: 2.5rem; }
+        .mt-1 { margin-top: 0.25rem; } .mt-2 { margin-top: 0.5rem; } .mt-8 { margin-top: 2rem; }
+        .p-3 { padding: 0.75rem; } .p-4 { padding: 1rem; } .p-10 { padding: 2.5rem; } .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 1.3; }
+        .text-3xl { font-size: 1.875rem; line-height: 1.25; }
+        .text-brand-accent { color: var(--brand-accent); }
+        .hover\:text-brand:hover { color: var(--brand-500); }
+        .focus\:outline-brand:focus-visible { outline: 2px solid var(--brand-500); outline-offset: 2px; }
+
+        /* ===== Versión escritorio / tablet (breakpoints responsivos) ===== */
+        @media (min-width: 640px) {
+            .sm\:flex-row { flex-direction: row; }
+        }
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .md\:p-8 { padding: 2rem; }
+            .text-3xl { font-size: 2.25rem; }
+            .text-2xl { font-size: 1.75rem; }
+            .container { padding: 0 2rem; }
+            .section { padding: 6rem 0; }
+            .hero { min-height: 80vh; }
+            .hero-content { max-width: 900px; }
+            .logo { height: 3.5rem; }
+        }
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .gap-10 { gap: 4rem; }
+            .modal { padding: 2rem; }
+            .modal-content { height: min(90vh, 760px); }
+            .modal-gallery { height: 100%; }
+        }
+        @media (min-width: 1280px) {
+            .container { max-width: 1280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+
+    <nav id="navbar" class="navbar" aria-label="Navegación principal">
+        <div class="container nav-content">
+            <a href="#" aria-label="Inicio">
+                <!-- SVGs inline para logos u ocultar imagen en modo oscuro mediante CSS si hubiera SVG. Como es imagen, se usan clases. -->
+                <img src="https://casascontainers.cl/wp-content/uploads/2026/06/LOGO_OFICIAL-scaled.png" alt="Casas Containers" class="logo" style="display: var(--light-logo-display, block);" id="logo-light">
+                <img src="https://casascontainers.cl/wp-content/uploads/2026/06/PNG_LOGO_BLANCO-724x1024.png" alt="Casas Containers" class="logo" style="display: var(--dark-logo-display, none);" id="logo-dark">
+            </a>
+            
+            <div class="nav-links">
+                <a href="#modelos" class="nav-link">Modelos</a>
+                <a href="#proceso" class="nav-link">Proceso</a>
+                <a href="#ventajas" class="nav-link">Ventajas</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#contacto" class="btn btn-primary">Cotizar Proyecto</a>
+                
+                <button id="themeToggle" aria-label="Cambiar modo de color" style="color: var(--text-muted); width: 24px; height: 24px;">
+                    <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+            
+            <button class="menu-btn" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" style="width: 24px; height: 24px;">
+                <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="#modelos" class="nav-link text-lg" onclick="closeMenu()">Modelos</a>
+        <a href="#proceso" class="nav-link text-lg" onclick="closeMenu()">Proceso</a>
+        <a href="#ventajas" class="nav-link text-lg" onclick="closeMenu()">Ventajas</a>
+        <a href="#nosotros" class="nav-link text-lg" onclick="closeMenu()">Nosotros</a>
+        <a href="#contacto" class="btn btn-primary" onclick="closeMenu()">Cotizar Proyecto</a>
+        <button id="themeToggleMobile" aria-label="Cambiar modo de color" class="nav-link text-lg flex items-center gap-2">
+            <svg viewBox="0 0 24 24" style="width: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> Tema
+        </button>
+    </div>
+
+    <main id="main">
+        <!-- HERO -->
+        <section class="hero">
+            <img src="https://casascontainers.cl/wp-content/uploads/2025/11/nogal-1.jpeg" 
+                 srcset="https://casascontainers.cl/wp-content/uploads/2025/11/nogal-1.jpeg 1x" 
+                 alt="Vivienda Container de Lujo" 
+                 class="hero-img" 
+                 width="1920" height="1080" 
+                 fetchpriority="high">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span style="display:inline-block; padding: 4px 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; margin-bottom: 1rem;">Arquitectura Modular</span>
+                <h1>Viviendas en contenedor desde $17.990.000 + IVA.<br><span class="text-brand-accent" style="font-style: italic; font-weight: 300;">Fabricadas en Paine.</span></h1>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8" style="flex-direction: row; flex-wrap: wrap;">
+                    <a href="#modelos" class="btn btn-accent">Ver Modelos</a>
+                    <a href="#contacto" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">Cotizar Ahora</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODELOS -->
+        <section class="section bg-surface" id="modelos">
+            <div class="container reveal">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Modelos Destacados</h2>
+                    <p class="text-muted">Diseños llave en mano, optimizados y personalizables.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="modelosGrid">
+                    <!-- Inyectado por JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- TABLA COMPARATIVA -->
+        <section class="section bg-color">
+            <div class="container reveal">
+                <h2 class="text-3xl font-bold text-center mb-8">Comparativa de Modelos</h2>
+                <div class="table-wrap bg-surface">
+                    <table id="tablaComparativa">
+                        <thead>
+                            <tr>
+                                <th>Modelo</th>
+                                <th>Superficie</th>
+                                <th>Dormitorios</th>
+                                <th>Baños</th>
+                                <th>Valor Neto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Inyectado por JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESO 4 PASOS -->
+        <section class="section bg-surface" id="proceso">
+            <div class="container reveal">
+                <h2 class="text-3xl font-bold text-center mb-8">Nuestro Proceso de Trabajo</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="border rounded-lg p-6 bg-color text-center">
+                        <div style="font-size: 2rem; color: var(--brand-500); font-weight: 900; margin-bottom: 1rem;">1</div>
+                        <h3 class="font-bold mb-2">Asesoría y Diseño</h3>
+                        <p class="text-sm text-muted">Definición de requerimientos y planos a medida. <br><em>[CONFIRMAR: 1-2 semanas]</em></p>
+                    </div>
+                    <div class="border rounded-lg p-6 bg-color text-center">
+                        <div style="font-size: 2rem; color: var(--brand-500); font-weight: 900; margin-bottom: 1rem;">2</div>
+                        <h3 class="font-bold mb-2">Fabricación</h3>
+                        <p class="text-sm text-muted">Construcción y terminaciones en maestranza. <br><em>[CONFIRMAR: 30-45 días]</em></p>
+                    </div>
+                    <div class="border rounded-lg p-6 bg-color text-center">
+                        <div style="font-size: 2rem; color: var(--brand-500); font-weight: 900; margin-bottom: 1rem;">3</div>
+                        <h3 class="font-bold mb-2">Traslado e Instalación</h3>
+                        <p class="text-sm text-muted">Logística segura hasta tu terreno. <br><em>[CONFIRMAR: 1-2 días]</em></p>
+                    </div>
+                    <div class="border rounded-lg p-6 bg-color text-center">
+                        <div style="font-size: 2rem; color: var(--brand-500); font-weight: 900; margin-bottom: 1rem;">4</div>
+                        <h3 class="font-bold mb-2">Entrega Llave en Mano</h3>
+                        <p class="text-sm text-muted">Vivienda lista para habitar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUÉ INCLUYE Y QUÉ NO -->
+        <section class="section bg-color">
+            <div class="container reveal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-surface p-8 border rounded-lg">
+                        <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                            <svg viewBox="0 0 24 24" class="text-brand"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> 
+                            El proyecto incluye [CONFIRMAR]
+                        </h3>
+                        <ul class="list-disc">
+                            <li>Estructura de contenedor marítimo.</li>
+                            <li>Aislación en poliuretano proyectado.</li>
+                            <li>Terminaciones interiores (piso vinílico, pintura).</li>
+                            <li>Baño y cocina equipados según modelo.</li>
+                            <li>Instalaciones eléctricas y sanitarias internas.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-surface p-8 border rounded-lg">
+                        <h3 class="font-bold text-lg mb-4 flex items-center gap-2" style="color: #e53e3e;">
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                            El proyecto NO incluye [CONFIRMAR]
+                        </h3>
+                        <ul class="list-disc">
+                            <li>Permisos de edificación municipales.</li>
+                            <li>Preparación de terreno y fundaciones (pollos).</li>
+                            <li>Transporte y servicio de grúa (se cotiza aparte).</li>
+                            <li>Conexiones exteriores a fosa, agua o red eléctrica.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VENTAJAS CON DATOS -->
+        <section class="section bg-surface" id="ventajas">
+            <div class="container reveal">
+                <h2 class="text-3xl font-bold text-center mb-8">Ventajas Competitivas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="border rounded-lg p-6 bg-color text-center">
+                        <div class="text-3xl font-bold text-brand mb-2">100%</div>
+                        <h4 class="font-bold mb-1">Maestranza Propia</h4>
+                        <p class="text-xs text-muted">Control total de calidad sin intermediarios.</p>
+                    </div>
+                    <div class="border rounded-lg p-6 bg-color text-center">
+                        <div class="text-3xl font-bold text-brand mb-2">50mm</div>
+                        <h4 class="font-bold mb-1">Aislación Térmica</h4>
+                        <p class="text-xs text-muted">Poliuretano de alta densidad para todo clima.</p>
+                    </div>
+                    <div class="border rounded-lg p-6 bg-color text-center">
+                        <div class="text-3xl font-bold text-brand mb-2">360°</div>
+                        <h4 class="font-bold mb-1">Próximamente</h4>
+                        <p class="text-xs text-muted">Nuevos recorridos virtuales en desarrollo.</p>
+                    </div>
+                    <div class="border rounded-lg p-6 bg-color text-center">
+                        <div class="text-3xl font-bold text-brand mb-2">30-45</div>
+                        <h4 class="font-bold mb-1">Días de Entrega</h4>
+                        <p class="text-xs text-muted">Proceso optimizado y llave en mano.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOSOTROS -->
+        <section class="section bg-color" id="nosotros">
+            <div class="container reveal text-center">
+                <h2 class="text-3xl font-bold mb-6">Tu refugio ideal, construido con excelencia.</h2>
+                <p class="text-muted max-w-4xl mx-auto mb-10">Fabricamos viviendas modulares que combinan la resistencia estructural del acero con diseños cálidos y eficientes.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <div class="border rounded-lg overflow-hidden bg-surface flex flex-col justify-center items-center p-10" style="min-height: 250px;">
+                        <svg viewBox="0 0 24 24" style="font-size: 3rem; color: var(--border-color); mb-4"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        <p class="text-sm font-bold text-muted mt-4">[CONFIRMAR: Insertar foto real de la fábrica / equipo trabajando]</p>
+                    </div>
+                    <div class="border rounded-lg overflow-hidden bg-surface flex flex-col justify-center items-center p-10" style="min-height: 250px;">
+                        <svg viewBox="0 0 24 24" style="font-size: 3rem; color: var(--border-color); mb-4"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        <p class="text-sm font-bold text-muted mt-4">[CONFIRMAR: Insertar foto real del equipo directivo/ventas]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS ENTREGADOS -->
+        <section class="section bg-surface">
+            <div class="container reveal">
+                <h2 class="text-3xl font-bold text-center mb-8">Proyectos Entregados</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="border rounded-lg overflow-hidden bg-color flex flex-col justify-center items-center p-8 aspect-video">
+                        <p class="text-xs font-bold text-muted">[CONFIRMAR: Foto real proyecto 1]</p>
+                    </div>
+                    <div class="border rounded-lg overflow-hidden bg-color flex flex-col justify-center items-center p-8 aspect-video">
+                        <p class="text-xs font-bold text-muted">[CONFIRMAR: Foto real proyecto 2]</p>
+                    </div>
+                    <div class="border rounded-lg overflow-hidden bg-color flex flex-col justify-center items-center p-8 aspect-video">
+                        <p class="text-xs font-bold text-muted">[CONFIRMAR: Foto real proyecto 3]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section bg-color" id="faq">
+            <div class="container reveal">
+                <h2 class="text-3xl font-bold text-center mb-8">Preguntas Frecuentes</h2>
+                <div class="max-w-4xl mx-auto" id="accordionContainer">
+                    <!-- JS generará el acordeón -->
+                </div>
+            </div>
+        </section>
+
+        <!-- COTIZADOR & CONTACTO -->
+        <section class="section bg-surface" id="contacto">
+            <div class="container reveal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Diseñemos tu proyecto.</h2>
+                        <p class="text-muted mb-8">Usa nuestro cotizador rápido para enviarnos un mensaje directo a WhatsApp o contáctanos por nuestras vías formales.</p>
+                        
+                        <div class="mb-6">
+                            <p class="label mb-2">Atención al Cliente</p>
+                            <a href="https://wa.me/56966607969" class="font-bold text-lg flex items-center gap-2 hover:text-brand" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" class="text-brand"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                                +569 66607969
+                            </a>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="label mb-2">Ubicación</p>
+                            <p class="text-sm">Calle 5 Poniente Parcela 127, Paine.</p>
+                            <button onclick="loadMap()" id="btnMap" class="btn btn-outline mt-2 text-xs">Cargar mapa [CONFIRMAR]</button>
+                            <div id="mapContainer" class="mt-2 rounded overflow-hidden" style="display: none; height: 200px; background: #e2e8f0;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario a WA -->
+                    <div class="bg-color p-6 md:p-8 border rounded-lg">
+                        <form id="cotizadorForm" onsubmit="enviarWA(event)">
+                            <!-- Honeypot anti-spam -->
+                            <input type="text" name="website" id="honeypot" class="sr-only" tabindex="-1" autocomplete="off">
+                            
+                            <div class="mb-4">
+                                <label for="nombre" class="label">Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" class="input" required aria-required="true">
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="modeloInt" class="label">Modelo de Interés</label>
+                                    <select id="modeloInt" name="modelo" class="select" required>
+                                        <option value="">Seleccione...</option>
+                                        <option value="Nogal">Casa El Nogal</option>
+                                        <option value="Lo Alerce">Casa Lo Alerce</option>
+                                        <option value="Roble">Casa El Roble</option>
+                                        <option value="Marbella">Vivienda Marbella</option>
+                                        <option value="Otro">Proyecto a Medida</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="region" class="label">Región</label>
+                                    <select id="region" name="region" class="select" required>
+                                        <option value="">Seleccione...</option>
+                                        <option value="Arica y Parinacota">Arica y Parinacota</option>
+                                        <option value="Tarapacá">Tarapacá</option>
+                                        <option value="Antofagasta">Antofagasta</option>
+                                        <option value="Atacama">Atacama</option>
+                                        <option value="Coquimbo">Coquimbo</option>
+                                        <option value="Valparaíso">Valparaíso</option>
+                                        <option value="Metropolitana">Metropolitana de Santiago</option>
+                                        <option value="O'Higgins">O'Higgins</option>
+                                        <option value="Maule">Maule</option>
+                                        <option value="Ñuble">Ñuble</option>
+                                        <option value="Biobío">Biobío</option>
+                                        <option value="Araucanía">Araucanía</option>
+                                        <option value="Los Ríos">Los Ríos</option>
+                                        <option value="Los Lagos">Los Lagos</option>
+                                        <option value="Aysén">Aysén</option>
+                                        <option value="Magallanes">Magallanes</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="mensaje" class="label">Requerimientos Adicionales</label>
+                                <textarea id="mensaje" name="mensaje" class="textarea" rows="3" placeholder="¿Tienes terreno propio? ¿Dudas adicionales?"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-full">Cotizar por WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-color section border-0 text-center" style="padding: 3rem 1.5rem; padding-bottom: 5rem;">
+        <div class="container">
+            <p class="text-sm text-muted">&copy; 2026 Casas Containers. Todos los derechos reservados.</p>
+            <p class="text-xs font-bold text-muted mt-2">Diseñado por zubzertata</p>
+        </div>
+    </footer>
+
+    <!-- MOBILE BOTTOM BAR -->
+    <div class="bottom-bar">
+        <a href="#contacto" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.875rem;">Cotizar</a>
+        <a href="https://wa.me/56966607969" target="_blank" rel="noopener" class="btn btn-primary" style="flex: 1; padding: 0.5rem; font-size: 0.875rem; background: #25D366;">WhatsApp</a>
+    </div>
+
+    <!-- MODAL -->
+    <div id="planoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+        <div class="modal-content" id="modalContentBlock">
+            <button class="modal-close" id="closeModalBtn" aria-label="Cerrar modal">
+                <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            
+            <div class="modal-gallery">
+                <div style="flex-grow: 1; position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img id="mainGalleryImg" src="" alt="Vista modelo" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease;">
+                </div>
+                <div id="thumbnailContainer" style="height: 6rem; background: rgba(0,0,0,0.95); padding: 0.5rem; display: flex; gap: 0.5rem; overflow-x: auto; align-items: center;" class="custom-scroll">
+                    <!-- Thumbnails inyectados por JS -->
+                </div>
+            </div>
+            
+            <div class="modal-info">
+                <h3 id="modalTitle" class="text-2xl font-bold mb-4">Modelo</h3>
+                <div class="flex gap-2 mb-6 text-center" style="font-size: 0.85rem;">
+                    <div class="flex-1 bg-color p-2 border rounded">
+                        <p class="label" style="font-size: 0.65rem;">Área</p>
+                        <p id="modalM2" class="font-bold">-</p>
+                    </div>
+                    <div class="flex-1 bg-color p-2 border rounded">
+                        <p class="label" style="font-size: 0.65rem;">Dorms</p>
+                        <p id="modalBed" class="font-bold">-</p>
+                    </div>
+                    <div class="flex-1 bg-color p-2 border rounded">
+                        <p class="label" style="font-size: 0.65rem;">Baños</p>
+                        <p id="modalBath" class="font-bold">-</p>
+                    </div>
+                    <div class="flex-1 bg-color p-2 border rounded">
+                        <p class="label" style="font-size: 0.65rem;">Cocina</p>
+                        <p id="modalKitchen" class="font-bold">-</p>
+                    </div>
+                </div>
+                
+                <h4 class="font-bold mb-2">Plano Esquematico [CONFIRMAR]</h4>
+                <div id="modalSvgContainer" class="bg-color border rounded p-4 mb-6 flex justify-center items-center" style="height: 150px;">
+                    <!-- SVG injected here -->
+                </div>
+                
+                <h4 class="font-bold mb-2">El Kit Incluye:</h4>
+                <ul class="list-disc text-sm mb-6">
+                    <li>Estructura original contenedor.</li>
+                    <li>Aislación Poliuretano.</li>
+                    <li>Piso Vinílico alto tráfico.</li>
+                    <li>Baño completo y Cocina amoblada.</li>
+                    <li>Ventanales termopanel.</li>
+                </ul>
+                
+                <div class="mt-4 border rounded-lg p-6 bg-color relative overflow-hidden mb-6" style="border-color: rgba(38, 117, 30, 0.2);">
+                    <div style="position:absolute; right:-1rem; bottom:-1rem; font-size:4rem; opacity:0.05; color:var(--brand-500);">
+                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                    </div>
+                    <div class="flex gap-4 relative z-10 items-start">
+                        <div style="width:3rem; height:3rem; border-radius:50%; background:var(--surface-color); display:flex; align-items:center; justify-content:center; color:var(--brand-500); flex-shrink:0; border:1px solid var(--border-color);">
+                            <svg viewBox="0 0 24 24" style="width:1.5rem; height:1.5rem;"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand" style="margin-bottom:0.25rem;">Recorrido Virtual 360°</h4>
+                            <p class="text-xs text-muted" style="line-height:1.5;">
+                                El cliente necesita experimentar el espacio. <strong>*Aporte estratégico:*</strong> En lugar de entregar planos tradicionales (que fomentan la copia), mi rol será integrar Recorridos Virtuales 360°. El cliente podrá "caminar" por la casa, acelerando dramáticamente el cierre comercial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="document.getElementById('closeModalBtn').click(); window.location.href='#contacto'" class="btn btn-primary w-full mt-auto">Cotizar este modelo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP MULTI-AGENTE -->
+    <div style="position:fixed; bottom:1.5rem; right:1.5rem; z-index:50; display:flex; flex-direction:column; align-items:flex-end;" class="hidden md:flex">
+        <div id="wa-panel" class="bg-surface rounded-lg border" style="width: 320px; margin-bottom: 1rem; transform: scale(0.95); opacity: 0; pointer-events: none; transform-origin: bottom right; transition: all 0.3s; box-shadow: var(--shadow);">
+            <div style="background: #25D366; color: white; padding: 1.25rem; position: relative; overflow: hidden; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+                <div class="flex justify-between items-start relative z-10">
+                    <div>
+                        <h4 class="font-bold text-lg" style="color:white; margin:0;">Asesores Comerciales</h4>
+                        <p style="font-size: 0.75rem; opacity: 0.9; color:white; margin:0;">Responden en minutos</p>
+                    </div>
+                    <button onclick="toggleWa()" style="background: rgba(0,0,0,0.1); width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                        <svg viewBox="0 0 24 24" width="16"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div style="padding: 0.5rem; max-height: 250px; overflow-y: auto;" class="custom-scroll">
+                <a href="https://wa.me/56956786366" target="_blank" style="display:flex; align-items:center; padding: 0.75rem; border-radius: 0.5rem; transition: background 0.2s;" onmouseover="this.style.background='var(--bg-color)'" onmouseout="this.style.background='transparent'">
+                    <div style="width:3rem; height:3rem; background:var(--bg-color); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:1rem; position:relative; border:1px solid var(--border-color);">
+                        <svg viewBox="0 0 24 24" width="20" style="color:var(--text-muted);"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <div style="position:absolute; bottom:0; right:0; width:12px; height:12px; background:#25D366; border:2px solid var(--surface-color); border-radius:50%;"></div>
+                    </div>
+                    <div style="flex-grow:1;">
+                        <p style="font-weight:bold; font-size:0.875rem; margin:0;">Bernard Bustamante</p>
+                        <p style="font-size:0.65rem; text-transform:uppercase; font-weight:bold; letter-spacing:0.1em; color:#25D366; margin:0;">En línea</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/56966607969" target="_blank" style="display:flex; align-items:center; padding: 0.75rem; border-radius: 0.5rem; transition: background 0.2s;" onmouseover="this.style.background='var(--bg-color)'" onmouseout="this.style.background='transparent'">
+                    <div style="width:3rem; height:3rem; background:var(--bg-color); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:1rem; position:relative; border:1px solid var(--border-color);">
+                        <svg viewBox="0 0 24 24" width="20" style="color:var(--text-muted);"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <div style="position:absolute; bottom:0; right:0; width:12px; height:12px; background:#25D366; border:2px solid var(--surface-color); border-radius:50%;"></div>
+                    </div>
+                    <div style="flex-grow:1;">
+                        <p style="font-weight:bold; font-size:0.875rem; margin:0;">Macarena Palacios</p>
+                        <p style="font-size:0.65rem; text-transform:uppercase; font-weight:bold; letter-spacing:0.1em; color:#25D366; margin:0;">En línea</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/56949187414" target="_blank" style="display:flex; align-items:center; padding: 0.75rem; border-radius: 0.5rem; transition: background 0.2s;" onmouseover="this.style.background='var(--bg-color)'" onmouseout="this.style.background='transparent'">
+                    <div style="width:3rem; height:3rem; background:var(--bg-color); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:1rem; position:relative; border:1px solid var(--border-color);">
+                        <svg viewBox="0 0 24 24" width="20" style="color:var(--text-muted);"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <div style="position:absolute; bottom:0; right:0; width:12px; height:12px; background:#25D366; border:2px solid var(--surface-color); border-radius:50%;"></div>
+                    </div>
+                    <div style="flex-grow:1;">
+                        <p style="font-weight:bold; font-size:0.875rem; margin:0;">Valeria Gonzalez V.</p>
+                        <p style="font-size:0.65rem; text-transform:uppercase; font-weight:bold; letter-spacing:0.1em; color:#25D366; margin:0;">En línea</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/56999780036" target="_blank" style="display:flex; align-items:center; padding: 0.75rem; border-radius: 0.5rem; transition: background 0.2s;" onmouseover="this.style.background='var(--bg-color)'" onmouseout="this.style.background='transparent'">
+                    <div style="width:3rem; height:3rem; background:var(--bg-color); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:1rem; position:relative; border:1px solid var(--border-color);">
+                        <svg viewBox="0 0 24 24" width="20" style="color:var(--text-muted);"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <div style="position:absolute; bottom:0; right:0; width:12px; height:12px; background:#25D366; border:2px solid var(--surface-color); border-radius:50%;"></div>
+                    </div>
+                    <div style="flex-grow:1;">
+                        <p style="font-weight:bold; font-size:0.875rem; margin:0;">Ariana Soza</p>
+                        <p style="font-size:0.65rem; text-transform:uppercase; font-weight:bold; letter-spacing:0.1em; color:#25D366; margin:0;">En línea</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/56957408213" target="_blank" style="display:flex; align-items:center; padding: 0.75rem; border-radius: 0.5rem; transition: background 0.2s;" onmouseover="this.style.background='var(--bg-color)'" onmouseout="this.style.background='transparent'">
+                    <div style="width:3rem; height:3rem; background:var(--bg-color); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:1rem; position:relative; border:1px solid var(--border-color);">
+                        <svg viewBox="0 0 24 24" width="20" style="color:var(--text-muted);"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <div style="position:absolute; bottom:0; right:0; width:12px; height:12px; background:#25D366; border:2px solid var(--surface-color); border-radius:50%;"></div>
+                    </div>
+                    <div style="flex-grow:1;">
+                        <p style="font-weight:bold; font-size:0.875rem; margin:0;">Gisela Romero C.</p>
+                        <p style="font-size:0.65rem; text-transform:uppercase; font-weight:bold; letter-spacing:0.1em; color:#25D366; margin:0;">En línea</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div style="position:relative;">
+            <button onclick="toggleWa()" style="background: #25D366; color: white; width: 4rem; height: 4rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(37,211,102,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                <svg viewBox="0 0 24 24" width="32"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function toggleWa() {
+            const panel = document.getElementById('wa-panel');
+            if (panel.style.opacity === '0' || !panel.style.opacity) {
+                panel.style.opacity = '1';
+                panel.style.transform = 'scale(1)';
+                panel.style.pointerEvents = 'auto';
+            } else {
+                panel.style.opacity = '0';
+                panel.style.transform = 'scale(0.95)';
+                panel.style.pointerEvents = 'none';
+            }
+        }
+        // DATOS CENTRALIZADOS
+        const MODELOS = [
+            {
+                id: 'nogal',
+                name: 'Casa El Nogal',
+                m2: '40 pies',
+                bed: 2,
+                bath: 1,
+                kitchen: 1,
+                price: 17990000,
+                img: 'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-1.jpeg',
+                images: [
+                    'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-1.jpeg',
+                    'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-2.jpeg',
+                    'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-3.jpeg',
+                    'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-4.jpeg',
+                    'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-5.jpeg'
+                ],
+                schema: '<svg viewBox="0 0 120 40" style="width:100%; height:100%;"><rect x="5" y="5" width="110" height="30" fill="none" stroke="currentColor" stroke-width="2"/><line x1="40" y1="5" x2="40" y2="35" stroke="currentColor" stroke-dasharray="2"/><line x1="80" y1="5" x2="80" y2="35" stroke="currentColor" stroke-dasharray="2"/><text x="22" y="22" font-size="6" text-anchor="middle" fill="currentColor">Dorm</text><text x="60" y="22" font-size="6" text-anchor="middle" fill="currentColor">Baño/Cocina</text><text x="98" y="22" font-size="6" text-anchor="middle" fill="currentColor">Estar</text></svg>'
+            },
+            {
+                id: 'alerce',
+                name: 'Casa Lo Alerce',
+                m2: '40 pies',
+                bed: 1,
+                bath: 1,
+                kitchen: 1,
+                price: 17990000, 
+                img: 'https://casascontainers.cl/wp-content/uploads/2025/11/lo-alerce-1.jpeg',
+                images: [
+                    'https://casascontainers.cl/wp-content/uploads/2025/11/lo-alerce-1.jpeg',
+                    'https://casascontainers.cl/wp-content/uploads/2025/11/lo-alerce-2.jpeg',
+                    'https://casascontainers.cl/wp-content/uploads/2025/11/lo-alerce-4.jpeg'
+                ],
+                schema: '<svg viewBox="0 0 120 60" style="width:100%; height:100%;"><rect x="5" y="5" width="110" height="50" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="5" x2="60" y2="55" stroke="currentColor" stroke-dasharray="2"/><text x="32" y="30" font-size="6" text-anchor="middle" fill="currentColor">Dormitorio</text><text x="90" y="30" font-size="6" text-anchor="middle" fill="currentColor">Baño / Cocina</text></svg>'
+            },
+            {
+                id: 'roble',
+                name: 'Casa El Roble',
+                m2: '40 pies',
+                bed: 2,
+                bath: 1,
+                kitchen: 1,
+                price: 17990000, 
+                img: 'https://casascontainers.cl/wp-content/uploads/2025/11/cuad-El-Roble-1-768x768.jpeg',
+                images: [
+                    'https://casascontainers.cl/wp-content/uploads/2025/11/cuad-El-Roble-1-768x768.jpeg'
+                ],
+                schema: '<svg viewBox="0 0 80 40" style="width:100%; height:100%;"><rect x="5" y="5" width="70" height="30" fill="none" stroke="currentColor" stroke-width="2"/><line x1="30" y1="5" x2="30" y2="35" stroke="currentColor" stroke-dasharray="2"/><line x1="55" y1="5" x2="55" y2="35" stroke="currentColor" stroke-dasharray="2"/><text x="17" y="22" font-size="6" text-anchor="middle" fill="currentColor">Dorm</text><text x="42" y="22" font-size="6" text-anchor="middle" fill="currentColor">Baño</text><text x="67" y="22" font-size="6" text-anchor="middle" fill="currentColor">Estar</text></svg>'
+            },
+            {
+                id: 'marbella',
+                name: 'Vivienda Marbella',
+                m2: '40 pies',
+                bed: 1,
+                bath: 1,
+                kitchen: 1,
+                price: 17990000, 
+                img: 'https://casascontainers.cl/wp-content/uploads/2026/06/27201e16-45d7-45cb-b8c8-8e3109061dc1-768x921.png',
+                images: [
+                    'https://casascontainers.cl/wp-content/uploads/2026/06/27201e16-45d7-45cb-b8c8-8e3109061dc1-768x921.png'
+                ],
+                schema: '<svg viewBox="0 0 120 80" style="width:100%; height:100%;"><rect x="5" y="5" width="110" height="70" fill="none" stroke="currentColor" stroke-width="2"/><text x="60" y="40" font-size="6" text-anchor="middle" fill="currentColor">Distribución Amplia [CONFIRMAR]</text></svg>'
+            }
+        ];
+
+        const FAQS = [
+            { q: '¿Incluyen los permisos municipales?', a: 'No, los permisos de edificación corren por cuenta del cliente, aunque entregamos las especificaciones técnicas base. [CONFIRMAR]' },
+            { q: '¿Qué tipo de fundaciones necesito?', a: 'Sugerimos apoyos tipo "pollos" de hormigón. El terreno debe estar nivelado previo a la entrega. [CONFIRMAR]' },
+            { q: '¿Tienen financiamiento?', a: 'Trabajamos con pago al contado parcializado según avances de obra. No otorgamos crédito directo. [CONFIRMAR]' },
+            { q: '¿Cuál es la garantía?', a: 'Otorgamos garantía estructural de 5 años y 1 año en terminaciones interiores. [CONFIRMAR]' }
+        ];
+
+        // INICIALIZACIÓN
+        document.addEventListener('DOMContentLoaded', () => {
+            renderModelos();
+            renderTabla();
+            renderFaqs();
+            initObserver();
+            initThemeToggle();
+        });
+
+        // RENDERIZAR MODELOS
+        function renderModelos() {
+            const grid = document.getElementById('modelosGrid');
+            grid.innerHTML = MODELOS.map(m => `
+                <button class="card focus:outline-brand" onclick="openModal('${m.id}')" aria-label="Ver detalles de ${m.name}">
+                    <div class="card-img-wrap">
+                        <img src="${m.img}" srcset="${m.img} 1x" alt="${m.name}" loading="lazy" width="400" height="300">
+                        <div class="card-badge">
+                            <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg> Galería
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="font-bold text-lg">${m.name}</h3>
+                        <p class="text-brand font-bold mt-1">$ ${m.price.toLocaleString('es-CL')} <span class="text-xs text-muted" style="font-weight:400;">+ IVA</span></p>
+                        <div class="card-specs">
+                            <span class="flex items-center gap-1"><svg viewBox="0 0 24 24"><path d="M21 10V7c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v3H2v5h2v2h1.5v-2h13v2H20v-2h2v-5h-1zm-14-3h3v3H7V7zm6 0h3v3h-3V7zm5 6H6v-1h12v1z"/></svg> ${m.bed}</span>
+                            <span class="flex items-center gap-1"><svg viewBox="0 0 24 24"><path d="M8 3c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v5c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-5c0-1.1-.9-2-2-2h-2V5c0-1.1-.9-2-2-2H8zm2 2h4v2h-4V5zM4 9h16v5H4V9z"/></svg> ${m.bath}</span>
+                            <span class="flex items-center gap-1"><svg viewBox="0 0 24 24"><path d="M21 16H3v-2h18v2zm0-5H3V9h18v2zm0-5H3V4h18v2z"/></svg> ${m.m2}</span>
+                        </div>
+                    </div>
+                </button>
+            `).join('');
+        }
+
+        // RENDERIZAR TABLA
+        function renderTabla() {
+            const tbody = document.querySelector('#tablaComparativa tbody');
+            tbody.innerHTML = MODELOS.map(m => `
+                <tr>
+                    <td class="font-bold">${m.name}</td>
+                    <td>${m.m2}</td>
+                    <td>${m.bed}</td>
+                    <td>${m.bath}</td>
+                    <td class="text-brand font-bold">$${m.price.toLocaleString('es-CL')}</td>
+                </tr>
+            `).join('');
+        }
+
+        // RENDERIZAR FAQS
+        function renderFaqs() {
+            const cont = document.getElementById('accordionContainer');
+            cont.innerHTML = FAQS.map((faq, i) => `
+                <div class="accordion-item bg-surface">
+                    <button class="accordion-btn" aria-expanded="false" aria-controls="faq-content-${i}" onclick="toggleAccordion(this)">
+                        ${faq.q}
+                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </button>
+                    <div class="accordion-content" id="faq-content-${i}">
+                        <p class="py-4 text-sm">${faq.a}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleAccordion(btn) {
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            document.querySelectorAll('.accordion-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+            if (!isExpanded) btn.setAttribute('aria-expanded', 'true');
+        }
+
+        // INTERSECTION OBSERVER (Animaciones)
+        function initObserver() {
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReduced) {
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+                return;
+            }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // NAVBAR SCROLL & MENU
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) navbar.classList.add('hidden');
+            else navbar.classList.remove('hidden');
+            lastScrollY = window.scrollY;
+        });
+
+        const menuBtn = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            const isActive = mobileMenu.classList.toggle('active');
+            menuBtn.setAttribute('aria-expanded', isActive);
+        });
+        function closeMenu() { mobileMenu.classList.remove('active'); menuBtn.setAttribute('aria-expanded', 'false'); }
+
+        // MODO OSCURO
+        function initThemeToggle() {
+            const btns = [document.getElementById('themeToggle'), document.getElementById('themeToggleMobile')];
+            btns.forEach(btn => btn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
+                
+                // Toggle logo (simulado via CSS variables)
+                document.documentElement.style.setProperty('--light-logo-display', isDark ? 'none' : 'block');
+                document.documentElement.style.setProperty('--dark-logo-display', isDark ? 'block' : 'none');
+            }));
+            
+            const isDark = document.documentElement.classList.contains('dark');
+            document.documentElement.style.setProperty('--light-logo-display', isDark ? 'none' : 'block');
+            document.documentElement.style.setProperty('--dark-logo-display', isDark ? 'block' : 'none');
+        }
+
+        // MODAL ACCESIBLE Y LOGICA DE GALERIA
+        const modal = document.getElementById('planoModal');
+        let focusableEls, firstEl, lastEl, lastFocusedEl;
+
+        function openModal(id) {
+            const m = MODELOS.find(x => x.id === id);
+            if(!m) return;
+            
+            document.getElementById('modalTitle').innerText = m.name;
+            document.getElementById('modalM2').innerText = m.m2;
+            document.getElementById('modalBed').innerText = m.bed;
+            document.getElementById('modalBath').innerText = m.bath;
+            document.getElementById('modalKitchen').innerText = m.kitchen;
+            document.getElementById('mainGalleryImg').src = m.images[0];
+            document.getElementById('modalSvgContainer').innerHTML = m.schema;
+            
+            // Generar miniaturas
+            const thumbContainer = document.getElementById('thumbnailContainer');
+            thumbContainer.innerHTML = m.images.map((imgSrc, i) => `
+                <img src="${imgSrc}" style="height: 70px; width: 96px; object-fit:cover; border-radius: 0.375rem; cursor:pointer; opacity: ${i === 0 ? 1 : 0.4}; border: 2px solid ${i === 0 ? 'var(--brand-500)' : 'transparent'}; flex-shrink: 0; transition: all 0.3s;" onclick="setMainImage('${imgSrc}', this)" onmouseover="this.style.opacity=1" onmouseout="if(this.style.borderColor==='transparent') this.style.opacity=0.4" alt="Miniatura">
+            `).join('');
+            
+            lastFocusedEl = document.activeElement;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            focusableEls = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            firstEl = focusableEls[0];
+            lastEl = focusableEls[focusableEls.length - 1];
+            firstEl.focus();
+        }
+
+        function setMainImage(src, el) {
+            const mainImg = document.getElementById('mainGalleryImg');
+            mainImg.style.opacity = 0;
+            setTimeout(() => {
+                mainImg.src = src;
+                mainImg.style.opacity = 1;
+            }, 150);
+            
+            const thumbs = document.getElementById('thumbnailContainer').children;
+            for(let thumb of thumbs) {
+                thumb.style.opacity = 0.4;
+                thumb.style.borderColor = 'transparent';
+            }
+            el.style.opacity = 1;
+            el.style.borderColor = 'var(--brand-500)';
+        }
+
+        document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            if(lastFocusedEl) lastFocusedEl.focus();
+        }
+
+        modal.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'Tab') {
+                if (e.shiftKey && document.activeElement === firstEl) { e.preventDefault(); lastEl.focus(); }
+                else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); firstEl.focus(); }
+            }
+        });
+
+        // FORMULARIO WHATSAPP
+        function enviarWA(e) {
+            e.preventDefault();
+            // Validar honeypot
+            if(document.getElementById('honeypot').value !== "") return;
+            
+            const nombre = document.getElementById('nombre').value;
+            const modelo = document.getElementById('modeloInt').value;
+            const region = document.getElementById('region').value;
+            const msj = document.getElementById('mensaje').value;
+            
+            const texto = `Hola Casas Containers. Mi nombre es ${nombre}. Me interesa cotizar el modelo: ${modelo}. Soy de la región: ${region}. ${msj ? 'Mensaje adicional: '+msj : ''}`;
+            const url = `https://wa.me/56966607969?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank');
+        }
+
+        // MAPA LAZY LOAD
+        function loadMap() {
+            const btn = document.getElementById('btnMap');
+            const cont = document.getElementById('mapContainer');
+            btn.style.display = 'none';
+            cont.style.display = 'block';
+            cont.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13264.408713063085!2d-70.7397!3d-33.8118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQ4JzQyLjUiUyA3MMKwNDQnMjIuOSJX!5e0!3m2!1ses-419!2scl!4v1610000000000!5m2!1ses-419!2scl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casas Containers | Vivienda modular en contenedores marítimos</title>
+<meta name="description" content="Viviendas en contenedores marítimos originales, diseñadas y fabricadas con ingeniería, precisión y terminaciones premium.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#1d2a25; --verde2:#2c4a3e; --hueso:#ecece6; --acero:#8fa09b;
+  --corten:#d2601a; --corten2:#e8863f; --tinta:#14201c;
+  --display:'Big Shoulders Display','Impact',sans-serif;
+  --body:'Figtree',system-ui,sans-serif;
+  --ease:cubic-bezier(.7,0,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--hueso);color:var(--tinta);line-height:1.6;overflow-x:hidden}
+body.loading{overflow:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--corten);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:.95;letter-spacing:.01em;text-transform:uppercase}
+.corr{background:repeating-linear-gradient(90deg,#2c4a3e 0,#3b6050 9px,#233b31 13px,#2c4a3e 22px)}
+
+/* ===== SCROLLBAR CUSTOM ===== */
+.custom-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
+.custom-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 4px; }
+.custom-scroll::-webkit-scrollbar-thumb { background: var(--corten); border-radius: 4px; }
+
+/* ===== PUERTAS DE ENTRADA ===== */
+.door{position:fixed;top:0;bottom:0;width:50%;z-index:200;transition:transform 1.7s var(--ease);display:flex;align-items:center;will-change:transform}
+.door.l{left:0;box-shadow:6px 0 30px rgba(0,0,0,.5)}
+.door.r{right:0;box-shadow:-6px 0 30px rgba(0,0,0,.5)}
+.door::before,.door::after{content:"";position:absolute;top:6%;bottom:6%;width:7px;background:linear-gradient(90deg,#9aa6a1,#e4e8e5 50%,#7d8a85);border-radius:4px;box-shadow:0 0 6px rgba(0,0,0,.5)}
+.door.l::before{right:22%}.door.l::after{right:34%}
+.door.r::before{left:22%}.door.r::after{left:34%}
+.door span{position:relative;z-index:2;font-family:var(--display);font-weight:800;color:#e9ece8;opacity:.9;letter-spacing:.14em;font-size:clamp(14px,2.2vw,26px);text-transform:uppercase}
+.door.l span{margin-left:auto;margin-right:46%;text-align:right}
+.door.r span{margin-right:auto;margin-left:46%}
+.opened .door.l{transform:translateX(-102%)}
+.opened .door.r{transform:translateX(102%)}
+.opened .door{pointer-events:none}
+@media(max-width:600px){
+  .door.l span{margin-right:20%}
+  .door.r span{margin-left:20%}
+}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s,padding .4s,box-shadow .4s;padding:22px 0}
+nav.scrolled{background:rgba(29,42,37,.92);backdrop-filter:blur(10px);padding:12px 0;box-shadow:0 4px 24px rgba(0,0,0,.25)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:var(--display);font-weight:900;font-size:26px;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.04em}
+.logo b{color:var(--corten2)}
+.links{display:flex;gap:30px;list-style:none}
+.links a{color:#dfe5e1;text-decoration:none;font-size:15px;font-weight:500;position:relative;padding:4px 0}
+.links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--corten2);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.links a:hover::after{transform:scaleX(1)}
+.btn{display:inline-block;background:var(--corten);color:#fff;text-decoration:none;font-weight:600;padding:14px 28px;border:0;border-radius:2px;cursor:pointer;font:600 16px var(--body);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;text-align:center}
+.btn::before{content:"";position:absolute;inset:0;background:var(--corten2);transform:translateX(-101%);transition:transform .45s var(--ease)}
+.btn:hover::before{transform:none}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(210,96,26,.4)}
+.btn>*,.btn{z-index:0}
+.btn span{position:relative;z-index:1}
+.btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.5)}
+.btn.ghost::before{background:rgba(255,255,255,.14)}
+@media(max-width:820px){.links{display:none}}
+@media(max-width:480px){
+  nav .wrap{flex-direction:column;gap:12px;padding:12px 24px}
+  .logo{font-size:24px}
+  .btn{padding:10px 24px;font-size:14px;width:100%}
+  nav.scrolled .wrap{padding:8px 24px}
+}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;background:radial-gradient(ellipse at 70% 40%,#3a5a4c 0,var(--verde) 60%);color:#fff;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 2px,transparent 2px 22px)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(38px,10vw,128px);font-weight:900;line-height:0.9;word-break:break-word}
+.hero h1 em{font-style:normal;display:block;color:transparent;-webkit-text-stroke:2px var(--corten2)}
+.hero p{max-width:540px;margin:28px 0 36px;color:#cdd7d2;font-size:18px}
+.cta{display:flex;gap:16px;flex-wrap:wrap}
+.house{position:relative;transform-style:preserve-3d;animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+.house svg{width:100%;height:auto;filter:drop-shadow(0 40px 40px rgba(0,0,0,.5))}
+.scroll{position:absolute;bottom:26px;left:50%;width:2px;height:54px;background:rgba(255,255,255,.2);overflow:hidden}
+.scroll::after{content:"";position:absolute;top:-50%;width:100%;height:50%;background:var(--corten2);animation:drip 1.8s infinite}
+@keyframes drip{to{top:110%}}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.house{order:-1;max-width:420px;margin:0 auto}}
+@media(max-width:480px){.hero{padding-top:160px} .cta .btn{width:100%}}
+
+/* ===== BANDA ACERO ===== */
+.band{background:var(--corten);color:#fff;overflow:hidden;padding:16px 0;white-space:nowrap}
+.band div{display:inline-block;animation:marq 30s linear infinite;font-family:var(--display);font-size:24px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.band span{margin:0 28px;opacity:.6}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ===== SECCIONES ===== */
+section{padding:110px 0}
+@media(max-width:600px){section{padding:70px 0}}
+.title{font-size:clamp(32px,8vw,78px);font-weight:900;max-width:820px;line-height:0.95;word-break:break-word}
+.lead{max-width:600px;margin-top:22px;font-size:18px;color:#46544f}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border-top:3px solid var(--tinta)}
+.stat{padding:28px 20px 0 0}
+.stat+.stat{padding-left:24px;border-left:1px solid rgba(20,32,28,.2)}
+.stat b{display:block;font-family:var(--display);font-size:clamp(46px,6vw,84px);font-weight:900;line-height:1;color:var(--verde2)}
+.stat small{font-size:15px;color:#52625c}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0;padding-left:0}}
+@media(max-width:500px){
+  .stats{grid-template-columns:1fr}
+  .stat+.stat{padding-left:0;border-left:0;border-top:1px solid rgba(20,32,28,.15);padding-top:24px;margin-top:24px}
+}
+
+/* Ventajas */
+.dark{background:var(--verde);color:#fff}
+.dark .lead{color:#b4c2bc}
+.dark .stats{border-top-color:rgba(255,255,255,.2)}
+.dark .stat b{color:var(--corten2)}
+.dark .stat small{color:#b4c2bc}
+.dark .stat+.stat{border-left-color:rgba(255,255,255,.15)}
+@media(max-width:500px){.dark .stat+.stat{border-top-color:rgba(255,255,255,.15);border-left-color:transparent}}
+
+.feat{margin-top:56px;border-top:1px solid rgba(255,255,255,.18)}
+.row{display:grid;grid-template-columns:90px 1fr 1.3fr;gap:28px;align-items:start;padding:34px 0;border-bottom:1px solid rgba(255,255,255,.18);position:relative;transition:padding-left .5s var(--ease)}
+.row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(210,96,26,.2),transparent);transition:width .6s var(--ease)}
+.row:hover::before{width:100%}
+.row:hover{padding-left:16px}
+.row>*{position:relative}
+.row svg{width:52px;height:52px;stroke:var(--corten2);fill:none;stroke-width:1.6}
+.row h3{font-size:clamp(26px,5vw,36px);font-weight:800}
+.row p{color:#b9c6c0}
+@media(max-width:760px){.row{grid-template-columns:1fr;gap:16px;padding-left:0!important}}
+
+/* Modelos */
+.tabs{display:flex;gap:8px;margin:48px 0 28px;flex-wrap:wrap}
+.tab{background:transparent;border:2px solid var(--tinta);color:var(--tinta);padding:12px 22px;font:700 20px var(--display);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.tab:hover{background:rgba(20,32,28,.08)}
+.tab[aria-selected=true]{background:var(--tinta);color:#fff}
+.model{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start;background:#fff;padding:44px;box-shadow:0 30px 60px -30px rgba(20,32,28,.35);width:100%}
+.plan{background:#e3e6e1;padding:28px;background-image:linear-gradient(rgba(20,32,28,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(20,32,28,.07) 1px,transparent 1px);background-size:20px 20px; border-radius:4px;width:100%;overflow:hidden}
+.plan svg{width:100%;height:auto;display:block}
+.plan .ct{fill:#fff;stroke:var(--tinta);stroke-width:3}
+.plan .wl{stroke:var(--tinta);stroke-width:2}
+.plan text{font:600 11px var(--body);fill:var(--tinta);text-anchor:middle}
+.plan .draw{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 1.6s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.model h3{font-size:clamp(36px,6vw,56px);font-weight:900;color:var(--verde2)}
+.spec{list-style:none;margin:20px 0}
+.spec li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed rgba(20,32,28,.25)}
+.price{font-family:var(--display);font-size:clamp(34px,6vw,46px);font-weight:800;margin-bottom:20px}
+.price small{display:block;font:500 14px var(--body);color:#5b6a64}
+.model .btn{background:var(--tinta);width:100%}
+.model .btn::before{background:var(--corten)}
+@media(max-width:900px){.model{grid-template-columns:1fr;padding:24px;gap:40px}}
+@media(max-width:480px){.plan{padding:12px}}
+
+/* Proceso */
+.steps{position:relative;margin-top:64px;padding-left:56px}
+.steps::before,.steps .fill{content:"";position:absolute;left:17px;top:6px;bottom:6px;width:3px;background:rgba(255,255,255,.18)}
+.steps .fill{background:var(--corten2);height:0;bottom:auto;transition:height .15s linear}
+.step{position:relative;padding-bottom:46px}
+.step:last-child{padding-bottom:0}
+.step i{position:absolute;left:-56px;top:0;width:38px;height:38px;border-radius:50%;background:var(--verde);border:3px solid rgba(255,255,255,.25);display:grid;place-items:center;font:800 17px var(--display);font-style:normal;transition:all .4s}
+.step.on i{background:var(--corten);border-color:var(--corten2)}
+.step h3{font-size:clamp(24px,5vw,34px);font-weight:800}
+.step p{color:#b9c6c0;max-width:560px}
+@media(max-width:600px){
+  .steps{padding-left:44px}
+  .step i{left:-44px;width:32px;height:32px;font-size:15px}
+  .steps::before,.steps .fill{left:14px}
+}
+
+/* Contacto */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+form{display:grid;gap:18px}
+.f{position:relative}
+.f input,.f select,.f textarea{width:100%;background:#fff;border:2px solid transparent;border-bottom-color:rgba(20,32,28,.35);padding:22px 14px 8px;font:400 16px var(--body);color:var(--tinta);transition:border-color .3s,box-shadow .3s}
+.f textarea{resize:vertical;min-height:100px}
+.f label{position:absolute;left:14px;top:15px;color:#64736d;pointer-events:none;transition:all .25s}
+.f input:focus,.f select:focus,.f textarea:focus{outline:0;border-color:var(--corten);box-shadow:0 8px 20px -10px rgba(210,96,26,.6)}
+.f input:not(:placeholder-shown)+label,.f input:focus+label,.f textarea:not(:placeholder-shown)+label,.f textarea:focus+label,.f select+label{top:5px;font-size:12px;color:var(--corten)}
+.ok{display:none;padding:14px;background:var(--verde2);color:#fff}
+.ok.show{display:block;animation:pop .5s var(--ease)}
+@media(max-width:860px){.contact{grid-template-columns:1fr;gap:48px}}
+
+footer{background:var(--tinta);color:#9aa9a3;padding:36px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* ===== WA PANEL ===== */
+.wa-panel { position:fixed; bottom:96px; right:22px; z-index:95; width:calc(100vw - 44px); max-width:320px; background:#fff; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,.2); transform:scale(0.95); opacity:0; pointer-events:none; transform-origin:bottom right; transition:all .3s; display:flex; flex-direction:column; overflow:hidden; }
+.wa-panel.open { transform:scale(1); opacity:1; pointer-events:auto; }
+.wa-head { background:#25D366; color:#fff; padding:20px; position:relative; }
+.wa-head h4 { font-family:var(--display); font-size:22px; margin-bottom:2px; letter-spacing:0.02em; text-transform:none; }
+.wa-head p { font-size:12px; opacity:.9; }
+.wa-close { position:absolute; top:16px; right:16px; background:rgba(0,0,0,.1); border:none; color:#fff; width:28px; height:28px; border-radius:50%; cursor:pointer; display:grid; place-items:center; }
+.wa-body { padding:10px; max-height:300px; overflow-y:auto; }
+.wa-agent { display:flex; align-items:center; padding:12px; border-radius:6px; text-decoration:none; color:var(--tinta); transition:background .2s; }
+.wa-agent:hover { background:rgba(0,0,0,.04); }
+.wa-avatar { width:42px; height:42px; background:var(--hueso); border-radius:50%; display:grid; place-items:center; margin-right:14px; position:relative; border:1px solid rgba(0,0,0,.1); flex-shrink:0; }
+.wa-avatar svg { width:24px; fill:#8fa09b; }
+.wa-status { position:absolute; bottom:0; right:0; width:12px; height:12px; background:#25D366; border:2px solid #fff; border-radius:50%; }
+.wa-agent-info p { font-weight:700; font-size:14px; margin-bottom:2px; }
+.wa-agent-info span { font-size:10px; text-transform:uppercase; font-weight:800; color:#25D366; letter-spacing:0.05em; }
+
+.wa-btn { position:fixed; right:22px; bottom:22px; z-index:90; width:64px; height:64px; border-radius:50%; background:#25d366; display:grid; place-items:center; box-shadow:0 8px 24px rgba(37,211,102,.4); transition:transform .3s; cursor:pointer; border:none; }
+.wa-btn:hover { transform:scale(1.1) rotate(-6deg); }
+.wa-btn svg { width:34px; fill:#fff; }
+
+@media(max-width:480px){
+  .wa-panel{right:16px; bottom:86px; width:calc(100vw - 32px)}
+  .wa-btn{right:16px; bottom:16px; width:56px; height:56px}
+  .wa-btn svg{width:28px}
+}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="loading">
+
+<!-- Puertas del contenedor que se abren al cargar -->
+<div class="door l corr" aria-hidden="true"><span>Casas Containers</span></div>
+<div class="door r corr" aria-hidden="true"><span>CCNU 482 190-4 · 40'HC</span></div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#inicio" class="logo">Casas<b>Containers</b></a>
+    <ul class="links">
+      <li><a href="#calidad">Calidad</a></li>
+      <li><a href="#modelos">Modelos</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+    </ul>
+    <a href="#contacto" class="btn"><span>Cotizar mi casa</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <h1>Vivienda en contenedores <em>marítimos</em> originales</h1>
+      <p>Diseñados para perdurar. Transformamos contenedores en espacios habitables de alto estándar. Proyectos modulares desde $17.990.000 + IVA. Fabricadas en Paine.</p>
+      <div class="cta">
+        <a href="#contacto" class="btn"><span>Pedir cotización</span></a>
+        <a href="#modelos" class="btn ghost"><span>Ver modelos</span></a>
+      </div>
+    </div>
+    <div class="house" aria-hidden="true">
+      <svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="co" width="14" height="10" patternUnits="userSpaceOnUse"><rect width="14" height="10" fill="#2f5144"/><rect width="5" height="10" fill="#3f6858"/><rect x="9" width="3" height="10" fill="#223d32"/></pattern>
+          <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cfe5e8"/><stop offset="1" stop-color="#6c8f98"/></linearGradient>
+        </defs>
+        <rect x="30" y="150" width="300" height="110" fill="url(#co)"/>
+        <rect x="150" y="60" width="340" height="110" fill="url(#co)"/>
+        <rect x="150" y="170" width="340" height="90" fill="#1a2b25"/>
+        <rect x="170" y="190" width="190" height="70" fill="url(#gl)" opacity=".9"/>
+        <line x1="265" y1="190" x2="265" y2="260" stroke="#1a2b25" stroke-width="3"/>
+        <rect x="385" y="196" width="46" height="64" fill="#d2601a"/>
+        <rect x="52" y="178" width="110" height="54" fill="url(#gl)" opacity=".85"/>
+        <rect x="190" y="84" width="150" height="46" fill="url(#gl)" opacity=".85"/>
+        <rect x="150" y="54" width="340" height="8" fill="#14201c"/>
+        <rect x="30" y="144" width="140" height="8" fill="#14201c"/>
+        <rect x="20" y="260" width="480" height="10" fill="#0f1814"/>
+      </svg>
+    </div>
+  </div>
+  <div class="scroll"></div>
+</header>
+
+<div class="band" aria-hidden="true">
+  <div>Maestranza Propia <span>◆</span> 50mm Poliuretano <span>◆</span> Instalación llave en mano <span>◆</span> 30-45 Días de entrega <span>◆</span> Maestranza Propia <span>◆</span> 50mm Poliuretano <span>◆</span> Instalación llave en mano <span>◆</span> 30-45 Días de entrega <span>◆</span></div>
+</div>
+
+<section id="calidad">
+  <div class="wrap">
+    <h2 class="title">Ingeniería de obra, precisión de fábrica</h2>
+    <p class="lead">Construimos tu vivienda modular con un enfoque en calidad que garantiza durabilidad, estética y funcionalidad. Cada módulo se fabrica en nuestra maestranza en Paine, bajo control, y llega listo para instalarse.</p>
+    <div class="stats">
+      <div class="stat"><b data-n="100" data-s="%">0</b><small>maestranza propia y control</small></div>
+      <div class="stat"><b data-n="50" data-s="mm">0</b><small>aislación de poliuretano</small></div>
+      <div class="stat"><b data-n="45" data-s=" días">0</b><small>plazo máximo de entrega</small></div>
+      <div class="stat"><b data-n="10" data-s=" años">0</b><small>de garantía estructural</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2 class="title">Por qué elegir un contenedor</h2>
+    <p class="lead">Acero estructural diseñado para cruzar océanos, ahora pensado para que vivas mejor.</p>
+    <div class="feat">
+      <div class="row">
+        <svg viewBox="0 0 48 48"><path d="M24 4 6 12v12c0 11 8 17 18 20 10-3 18-9 18-20V12z"/><path d="m16 24 6 6 11-12"/></svg>
+        <div>
+          <h3>Resistencia real</h3><p>Acero Corten estructural que soporta viento, sismos y clima extremo. Una base que no se compara con la construcción tradicional.</p>
+        </div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 48 48"><path d="M24 6v36M6 24h36"/><circle cx="24" cy="24" r="12"/></svg>
+        <div>
+          <h3>Confort térmico</h3><p>Aislación de poliuretano proyectado (50mm), revestimientos interiores premium y ventanas termopanel para vivir cómodo todo el año.</p>
+        </div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="22"/><path d="M6 24h36M16 14v22M32 14v22"/></svg>
+        <div>
+          <h3>Diseño modular</h3><p>Amplía, combina o apila módulos. Tu casa crece con tu familia sin rehacer lo construido.</p>
+        </div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 12v12l8 6"/></svg>
+        <div>
+          <h3>Plazos cortos</h3><p>La fabricación en taller avanza en paralelo a la preparación de tu terreno. Menos espera, menos imprevistos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="modelos">
+  <div class="wrap">
+    <h2 class="title">Elige tu modelo</h2>
+    <p class="lead">Configuraciones optimizadas de 40 pies. Todas se personalizan en terminaciones y equipamiento.</p>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="model" id="model"></div>
+  </div>
+</section>
+
+<section class="dark" id="proceso">
+  <div class="wrap">
+    <h2 class="title">De la idea a tu llave</h2>
+    <div class="steps" id="steps">
+      <div class="fill" id="fill"></div>
+      <div class="step"><i>1</i><h3>Asesoría y diseño</h3><p>Definimos tus necesidades, el terreno y el presupuesto. Recibes planos y una cotización cerrada.</p></div>
+      <div class="step"><i>2</i><h3>Fabricación en maestranza</h3><p>Cortes, refuerzos, aislación de poliuretano, electricidad y terminaciones en nuestra fábrica en Paine.</p></div>
+      <div class="step"><i>3</i><h3>Traslado e instalación</h3><p>Transportamos tu contenedor terminado y lo instalamos sobre las fundaciones preparadas.</p></div>
+      <div class="step"><i>4</i><h3>Entrega llave en mano</h3><p>Revisión final, conexión de servicios y garantía por escrito. Listo para habitar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap contact">
+    <div>
+      <h2 class="title">Cotiza tu proyecto</h2>
+      <p class="lead">Cuéntanos qué necesitas. Te respondemos con una propuesta y los próximos pasos.</p>
+    </div>
+    <form id="form" novalidate>
+      <input type="text" name="website" id="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="f"><input id="nombre" placeholder=" " required><label for="nombre">Nombre</label></div>
+      <div class="f"><input id="tel" type="tel" placeholder=" " required><label for="tel">Teléfono</label></div>
+      <div class="f"><select id="mod"></select><label for="mod">Modelo de interés</label></div>
+      <div class="f"><textarea id="msg" placeholder=" "></textarea><label for="msg">Requerimientos adicionales (Terreno, Región, etc.)</label></div>
+      <button class="btn" type="submit"><span>Enviar por WhatsApp</span></button>
+      <div class="ok" id="ok" role="status">Listo. Abrimos WhatsApp para enviar tu solicitud.</div>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Casas Containers. Todos los derechos reservados.</span><span>Viviendas modulares diseñadas para perdurar. Propuesta rediseñada por zubzertata.</span></div></footer>
+
+<!-- Panel WhatsApp Multi-Agente -->
+<div class="wa-panel" id="waPanel">
+  <div class="wa-head">
+    <h4>Asesores Comerciales</h4>
+    <p>Responden en minutos</p>
+    <button class="wa-close" onclick="document.getElementById('waPanel').classList.remove('open')">✕</button>
+  </div>
+  <div class="wa-body custom-scroll">
+    <a href="https://wa.me/56956786366" target="_blank" class="wa-agent">
+      <div class="wa-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><div class="wa-status"></div></div>
+      <div class="wa-agent-info"><p>Bernard Bustamante</p><span>En línea</span></div>
+    </a>
+    <a href="https://wa.me/56966607969" target="_blank" class="wa-agent">
+      <div class="wa-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><div class="wa-status"></div></div>
+      <div class="wa-agent-info"><p>Macarena Palacios</p><span>En línea</span></div>
+    </a>
+    <a href="https://wa.me/56949187414" target="_blank" class="wa-agent">
+      <div class="wa-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><div class="wa-status"></div></div>
+      <div class="wa-agent-info"><p>Valeria Gonzalez V.</p><span>En línea</span></div>
+    </a>
+    <a href="https://wa.me/56999780036" target="_blank" class="wa-agent">
+      <div class="wa-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><div class="wa-status"></div></div>
+      <div class="wa-agent-info"><p>Ariana Soza</p><span>En línea</span></div>
+    </a>
+    <a href="https://wa.me/56957408213" target="_blank" class="wa-agent">
+      <div class="wa-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><div class="wa-status"></div></div>
+      <div class="wa-agent-info"><p>Gisela Romero C.</p><span>En línea</span></div>
+    </a>
+  </div>
+</div>
+<button class="wa-btn" aria-label="Escribir por WhatsApp" onclick="document.getElementById('waPanel').classList.toggle('open')">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.700-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .600.500l.800 2c.1.200.1.300 0 .500l-.3.400-.4.400c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.600-.1l1.900.9c.3.1.5.2.500.3.100.1.100.7-.100 1.400z"/></svg>
+</button>
+
+<script>
+// ---- DATOS OFICIALES DE CASAS CONTAINERS ----
+const MODELOS = [
+  {
+    n: "Casa El Nogal", m2: "40 pies", dorm: 2, bano: 1, cocina: 1, plazo: "30 a 45 días", precio: "$17.990.000",
+    images: [
+        'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-1.jpeg',
+        'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-2.jpeg',
+        'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-3.jpeg',
+        'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-4.jpeg',
+        'https://casascontainers.cl/wp-content/uploads/2025/11/nogal-5.jpeg'
+    ],
+    filas: [[["Dormitorio 1",.3], ["Dormitorio 2",.3], ["Baño",.15], ["Cocina / Estar",.25]]], l: 12
+  },
+  {
+    n: "Casa Lo Alerce", m2: "40 pies", dorm: 1, bano: 1, cocina: 1, plazo: "30 a 45 días", precio: "$17.990.000",
+    images: [
+        'https://casascontainers.cl/wp-content/uploads/2025/11/lo-alerce-1.jpeg',
+        'https://casascontainers.cl/wp-content/uploads/2025/11/lo-alerce-2.jpeg',
+        'https://casascontainers.cl/wp-content/uploads/2025/11/lo-alerce-4.jpeg'
+    ],
+    filas: [[["Dormitorio",.4], ["Baño",.2], ["Cocina / Estar",.4]]], l: 12
+  },
+  {
+    n: "Casa El Roble", m2: "40 pies", dorm: 2, bano: 1, cocina: 1, plazo: "30 a 45 días", precio: "$17.990.000",
+    images: [
+        'https://casascontainers.cl/wp-content/uploads/2025/11/cuad-El-Roble-1-768x768.jpeg'
+    ],
+    filas: [[["Dormitorio 1",.3], ["Dormitorio 2",.3], ["Baño",.15], ["Cocina / Estar",.25]]], l: 12
+  },
+  {
+    n: "Vivienda Marbella", m2: "40 pies", dorm: 1, bano: 1, cocina: 1, plazo: "30 a 45 días", precio: "$17.990.000",
+    images: [
+        'https://casascontainers.cl/wp-content/uploads/2026/06/27201e16-45d7-45cb-b8c8-8e3109061dc1-768x921.png'
+    ],
+    filas: [[["Dormitorio",.4], ["Baño",.2], ["Cocina / Estar",.4]]], l: 12
+  }
+];
+const $ = s => document.querySelector(s);
+
+// Puertas + nav
+window.addEventListener('load', () => setTimeout(() => {
+  document.body.classList.add('opened');
+  setTimeout(() => document.body.classList.remove('loading'), 1500);
+}, 600));
+const nav = $('#nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+
+// Contadores
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if(!e.isIntersecting) return; io.unobserve(e.target);
+  const el = e.target, n = +el.dataset.n, s = el.dataset.s, t0 = performance.now();
+  const tick = t => { const p = Math.min((t-t0)/1600,1); el.textContent = Math.round(n*(1-Math.pow(1-p,3))) + (p===1?s:''); if(p<1) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+}), {threshold:.6});
+document.querySelectorAll('[data-n]').forEach(el => io.observe(el));
+
+// Modelos: pestañas + plano SVG + Galeria interactiva
+const tabs = $('#tabs'), model = $('#model'), sel = $('#mod');
+MODELOS.forEach((m,i) => {
+  tabs.insertAdjacentHTML('beforeend', `<button class="tab" role="tab" data-i="${i}">${m.n}</button>`);
+  sel.insertAdjacentHTML('beforeend', `<option>${m.n}</option>`);
+});
+
+function plano(m){
+  const S=40, h=2.4*S, gap=10, W=m.l*S, H=m.filas.length*h+(m.filas.length-1)*gap;
+  let g='';
+  m.filas.forEach((fila,r) => {
+    const y=r*(h+gap); g+=`<rect class="ct draw" x="2" y="${y+2}" width="${W-4}" height="${h-4}"/>`;
+    let x=0;
+    fila.forEach(([nom,f],k) => {
+      const w=f*W; if(k) g+=`<line class="wl" x1="${x}" y1="${y+2}" x2="${x}" y2="${y+h-2}"/>`;
+      g+=`<text x="${x+w/2}" y="${y+h/2+4}">${nom}</text>`; x+=w;
+    });
+  });
+  return `<svg viewBox="-4 -4 ${W+8} ${H+8}" role="img" aria-label="Plano de ${m.n}">${g}</svg>`;
+}
+
+function show(i){
+  const m = MODELOS[i];
+  tabs.querySelectorAll('.tab').forEach((t,k) => t.setAttribute('aria-selected', k===i));
+  
+  // HTML Galeria
+  const mainImg = m.images[0];
+  const galleryHtml = `
+      <div style="display:flex; flex-direction:column; gap:12px;">
+          <img id="mImg" src="${mainImg}" style="width:100%; aspect-ratio:4/3; height:auto; max-height:350px; object-fit:cover; border-radius:4px; box-shadow:0 15px 30px rgba(0,0,0,0.1); transition: opacity 0.3s ease;">
+          <div class="custom-scroll" style="display:flex; gap:8px; overflow-x:auto; padding-bottom:8px;">
+              ${m.images.map((img, idx) => `<img src="${img}" style="width:100px; height:75px; flex-shrink:0; object-fit:cover; border-radius:4px; cursor:pointer; border: 2px solid ${idx===0?'var(--corten)':'transparent'}; opacity: ${idx===0?1:0.6}; transition:all 0.3s;" onclick="const mImg=document.getElementById('mImg'); mImg.style.opacity=0; setTimeout(()=>{mImg.src=this.src; mImg.style.opacity=1;}, 150); Array.from(this.parentNode.children).forEach(c=>{c.style.borderColor='transparent'; c.style.opacity=0.6;}); this.style.borderColor='var(--corten)'; this.style.opacity=1;" onmouseover="this.style.opacity=1" onmouseout="if(this.style.borderColor==='transparent') this.style.opacity=0.6" alt="Miniatura">`).join('')}
+          </div>
+      </div>
+  `;
+
+  // HTML Recorrido Virtual
+  const vrBlock = `
+      <div style="margin-top:32px; padding:20px; background:rgba(210,96,26,0.06); border:1px solid rgba(210,96,26,0.3); border-radius:6px; display:flex; gap:16px; align-items:start;">
+          <svg viewBox="0 0 24 24" style="width:28px; height:28px; fill:var(--corten); flex-shrink:0;"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          <div>
+              <h4 style="font-family:var(--display); font-size:20px; color:var(--corten); text-transform:uppercase; margin-bottom:4px; letter-spacing:0.02em;">Recorrido Virtual 360°</h4>
+              <p style="font-size:14px; color:#52625c; line-height:1.5;"><strong>*Aporte estratégico:*</strong> El cliente podrá "caminar" virtualmente por la casa, acelerando el cierre comercial sin exponer la planimetría a copias.</p>
+          </div>
+      </div>
+  `;
+
+  model.innerHTML = `
+    <div style="display:flex; flex-direction:column; gap:40px; width:100%; overflow:hidden;">
+        ${galleryHtml}
+        <div>
+            <h4 style="font-family:var(--display); font-size:22px; margin-bottom:16px; color:var(--verde2); text-transform:uppercase; letter-spacing:0.02em;">Distribución Técnica</h4>
+            <div class="plan">${plano(m)}</div>
+        </div>
+    </div>
+    <div style="width:100%;">
+        <h3 style="word-break:break-word;">${m.n}</h3>
+        <ul class="spec">
+            <li><span>Superficie</span><b>${m.m2}</b></li>
+            <li><span>Dormitorios</span><b>${m.dorm}</b></li>
+            <li><span>Baños</span><b>${m.bano}</b></li>
+            <li><span>Cocina</span><b>${m.cocina}</b></li>
+            <li><span>Plazo estimado</span><b>${m.plazo}</b></li>
+        </ul>
+        <div class="price">${m.precio}<small>Valor referencial desde, IVA incluido</small></div>
+        <a href="#contacto" class="btn" data-m="${i}" style="display:block; text-align:center;"><span>Cotizar este modelo</span></a>
+        ${vrBlock}
+    </div>`;
+  model.querySelector('.btn').onclick = () => sel.selectedIndex = i;
+}
+tabs.onclick = e => { const b = e.target.closest('.tab'); if(b) show(+b.dataset.i); };
+show(0);
+
+// Línea de tiempo con progreso al hacer scroll
+const steps = [...document.querySelectorAll('.step')], fill = $('#fill'), box = $('#steps');
+function prog(){
+  const r = box.getBoundingClientRect(), vh = innerHeight*.6;
+  const p = Math.max(0, Math.min(r.height, vh - r.top));
+  fill.style.height = p + 'px';
+  steps.forEach(s => s.classList.toggle('on', s.offsetTop + 19 <= p));
+}
+addEventListener('scroll', prog, {passive:true}); prog();
+
+// Formulario -> WhatsApp oficial (56966607969)
+$('#form').addEventListener('submit', e => {
+  e.preventDefault();
+  // Validación honeypot anti-spam
+  if($('#honeypot').value !== "") return;
+
+  const n = $('#nombre').value.trim(), t = $('#tel').value.trim();
+  if(!n || !t){ (n ? $('#tel') : $('#nombre')).focus(); return; }
+  const txt = `Hola Casas Containers. Soy ${n} (${t}). Me interesa cotizar el modelo: ${sel.value}. ${$('#msg').value}`;
+  $('#ok').classList.add('show');
+  window.open('https://wa.me/56966607969?text=' + encodeURIComponent(txt), '_blank');
+});
+</script>
+</body>
+</html>

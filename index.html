@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Propuesta conceptual de rediseño web para Casas Containers">
+  <title>Propuesta Web — Casas Containers</title>
+
+  <style>
+    :root {
+      --bg: #111412;
+      --panel: #191d1a;
+      --panel-hover: #222823;
+      --text: #f2f0e8;
+      --muted: #a9ada7;
+      --accent: #b66b43;
+      --border: rgba(255,255,255,.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(182,107,67,.12), transparent 32%),
+        radial-gradient(circle at 80% 90%, rgba(255,255,255,.05), transparent 30%),
+        var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    main {
+      width: min(1050px, 100%);
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: .75rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: .98;
+      letter-spacing: -.04em;
+      margin-bottom: 18px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      margin: auto;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    .proposals {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .proposal {
+      position: relative;
+      min-height: 370px;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .proposal::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -80px;
+      top: -80px;
+      border-radius: 50%;
+      background: rgba(182,107,67,.08);
+      pointer-events: none;
+    }
+
+    .proposal:hover {
+      transform: translateY(-5px);
+      border-color: rgba(182,107,67,.45);
+      background: var(--panel-hover);
+    }
+
+    .number {
+      font-size: .8rem;
+      letter-spacing: .15em;
+      color: var(--accent);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .proposal h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin: 18px 0 12px;
+      letter-spacing: -.025em;
+    }
+
+    .proposal p {
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 440px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: fit-content;
+      margin-top: 30px;
+      padding: 13px 20px;
+      border-radius: 10px;
+      background: var(--text);
+      color: #151715;
+      text-decoration: none;
+      font-weight: 750;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateX(3px);
+      background: #fff;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 34px;
+      color: #777c76;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 28px 16px;
+      }
+
+      .proposals {
+        grid-template-columns: 1fr;
+      }
+
+      .proposal {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="intro">
+      <span class="eyebrow">Propuesta conceptual</span>
+      <h1>Casas Containers</h1>
+      <p>
+        Dos direcciones visuales para una posible renovación de la presencia
+        digital de la empresa. Selecciona una propuesta para visualizarla.
+      </p>
+    </section>
+
+    <section class="proposals">
+      <article class="proposal">
+        <div>
+          <span class="number">Propuesta 01</span>
+          <h2>Moderna &amp; Comercial</h2>
+          <p>
+            Una dirección más limpia y corporativa, enfocada en presentar
+            modelos, características y opciones de cotización de forma clara.
+          </p>
+        </div>
+
+        <a class="button" href="prototipo.html">
+          Ver propuesta
+          <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <article class="proposal">
+        <div>
+          <span class="number">Propuesta 02</span>
+          <h2>Industrial</h2>
+          <p>
+            Una dirección con mayor identidad visual, inspirada en la
+            arquitectura modular y el carácter industrial de los contenedores.
+          </p>
+        </div>
+
+        <a class="button" href="prototipo%20industrial.html">
+          Ver propuesta
+          <span aria-hidden="true">→</span>
+        </a>
+      </article>
+    </section>
+
+    <footer>
+      Propuesta conceptual · No corresponde al sitio oficial de Casas Containers
+    </footer>
+  </main>
+</body>
+</html>
